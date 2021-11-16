@@ -1,0 +1,41 @@
+.chores-list {
+  width: 24%;
+  float: left;
+  text-align: center;
+  height: 100vh;
+}
+
+h2 {
+  color: Blue;
+}
+
+li {
+  list-style-type: none;
+  padding: 2%;
+  margin: 3%;
+  border-radius: 10px;
+  background-color: lightgray;
+  font-size: 20px;
+  color: purple;
+  text-underline-position: below;
+  font-style: italic;
+}
+
+.done-chores li {
+  color: red;
+}
+
+#reward-image {
+  width: 50%;
+  height: auto;
+}
+
+h1 {
+  color: red;
+  font-weight: bold;
+}
+
+.earn-block {
+  color: green;
+}
+/*# sourceMappingURL=chores-list.component.css.map */

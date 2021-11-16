@@ -1,0 +1,70 @@
+<div class="chores-list">
+    <h2>Yesterday's chores</h2>
+    <ul>
+        <li *ngFor="let chore of yesterdayChoresList" >{{chore}}</li>
+    </ul>
+    
+    <h2>Today's chores</h2>
+    <ul>
+        <li *ngFor="let chore of todayChoresList" >{{chore}}</li>
+    </ul>
+
+    
+
+    <h2>Tomorrow's chores</h2>
+    <ul>
+        <li *ngFor="let chore of tomorrowChoresList" >{{chore}}</li>
+    </ul>
+
+    <br>
+    <hr>
+
+    <h2>Chores</h2>
+    <ul>
+        <li *ngFor="let chore of choresList" (click)="onSelect(chore)">{{chore}}</li>
+    </ul>
+
+    <h2>Done Chores</h2>
+    <ul class="done-chores">
+        <li *ngFor="let chore of  finishedChores">{{chore}}</li>
+    </ul>
+
+    <p *ngIf="choresList.length>finishedChores.length;then block1 else block2"></p>
+    <ng-template #block1>
+        <h1>Work Harder</h1>
+    </ng-template>
+
+    <ng-template #block2>
+        <p *ngIf="finishedChores.length>=choresList.length + 3;then block3 else block4">
+        </p>
+            <ng-template #block3>               
+                <img id="reward-image" src="https://th.bing.com/th/id/R.5c0b352f9a09fed96e1fa175692211ee?rik=TBq7jiwmw3rl9Q&riu=http%3a%2f%2fimages4.fanpop.com%2fimage%2fphotos%2f24000000%2fice-cream-Yummy-ice-cream-24070273-696-1250.jpg&ehk=239%2b9pBlFcBbAIH9nZ1sXsjiQihuF%2fHCjfVCPlrni0s%3d&risl=&pid=ImgRaw&r=0" alt="no image found">
+                <!-- <p *ngIf="finishedChores.length>4">
+                    <h2>Ice Cream treat</h1>
+                </p> 
+                <p *ngIf="finishedChores.length<4">
+                    <h2>To earn Ice Cream</h2>
+                    <p>The chores list must be empty</p>
+                    <p>The done must have atleast 4 items</p>
+                </p> -->
+            </ng-template>
+            <ng-template #block4>
+                <h1>No allowance yet</h1>
+               
+            </ng-template>
+    </ng-template>
+
+                   
+               
+                <p *ngIf="finishedChores.length>=4; then block5 else block6">                   
+                </p> 
+                <ng-template #block5>
+                    <h2>Ice Cream Treat</h2>
+                </ng-template>
+                <ng-template  #block6>
+                    <hr>
+                    <h2 class="earn-block"> To earn Ice Cream</h2>
+                    <p class="earn-block">The chores list must be empty</p>
+                    <p class="earn-block">The done must have atleast 4 items</p>
+                </ng-template>
+</div>

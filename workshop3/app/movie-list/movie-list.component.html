@@ -1,0 +1,14 @@
+<div class="movie-list">
+
+    <h2>Movie List</h2>
+    <ul>
+        <li *ngFor="let movie of movieList" (click)="onSelect(movie)">{{movie}}</li>
+    </ul>
+
+    <br>
+    <h2>Watched</h2>
+    <ul class="watched-movie">
+        <li  *ngFor="let watchedMovie of watchedList"  >{{watchedMovie}}</li>
+    </ul>
+
+</div>
